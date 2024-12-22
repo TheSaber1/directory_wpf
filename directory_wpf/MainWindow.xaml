@@ -1,0 +1,74 @@
+﻿<Window x:Class="directory_wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      
+     Title="Kullanıcı Bilgi Formu" Height="350" Width="400" >
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="DarkGray" Offset="0.1"/>
+            <GradientStop Color="Black" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Ad:" VerticalAlignment="Center"/>
+        <Border Grid.Row="0" Grid.Column="1" Background="White" BorderBrush="Black" 
+        BorderThickness="1" CornerRadius="15" Margin="5">
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="textboxad" Margin="5"/>
+        </Border>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Soyad:" VerticalAlignment="Center"/>
+
+        <Border Grid.Row="1" Grid.Column="1" Background="White" BorderBrush="Black" 
+BorderThickness="1" CornerRadius="15" Margin="5">
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="textboxsoyad" Margin="5"/>
+        </Border>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Yaş:" VerticalAlignment="Center"/>
+        <Border Grid.Row="2" Grid.Column="1" Background="White" BorderBrush="Black" 
+BorderThickness="1" CornerRadius="15" Margin="5">
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="textboxyas" Margin="5"/>
+        </Border>
+
+        <Button  Width="80" Height="30"  Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" x:Name="eklebutton" Click="eklebutton_Click"  Margin="0,0,90,0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Green" CornerRadius="15" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Ekle"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button  Width="80" Height="30" Foreground="White" Margin="5,0,5,0" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" x:Name="kaldirbutton" Click="kaldirbutton_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Red" CornerRadius="15" BorderBrush="Black" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Kaldır"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+        <Border Grid.Row="4" Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="15" Margin="5,35,5,5">
+
+            <ListBox x:Name="bilgilerlistbox" Margin="5"/>
+
+        </Border>
+
+    </Grid>
+</Window>
